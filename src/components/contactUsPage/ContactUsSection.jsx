@@ -3,16 +3,18 @@ import React, { useEffect, useState } from "react";
 import logoimage from "../../assets/Logo_image.png";
 import menusymbol from "../../assets/menusymbol.png";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Section = (props) => {
   return (
-    <section className="w-full h-screen px-16 flex flex-col justify-start items-center">
-      <div className="w-full h-full flex flex-col justify-evenly max-w-[1300px]">
+    <section className="w-full paddinghori16 flex flex-col items-center">
+      <div className="w-full h-full flex flex-col justify-evenly max-w-[1300px] bgdiv ">
         {props.children}
       </div>
     </section>
   );
 };
+
 
 const ContactUsSection = () => {
   const [IsMenuVisible, setIsMenuVisible] = useState(false);
@@ -69,55 +71,155 @@ const ContactUsSection = () => {
       <div className="Main_Layout_Container relative">
         <Section>
           <section className="py-16 flex justify-between items-center">
-            <div className="flex">
-              <img src={logoimage} alt="logoimage" className="w-16" />
-              <h3 className="text-2xl mx-2 font-semibold leading-10 decoration-from-font decoration-skip-ink logo-text-color ">
+            <motion.div
+              className="flex"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 1 }}
+            >
+              <motion.img
+                src={logoimage}
+                alt="logoimage"
+                className="w-16"
+                initial={{ opacity: 0, y: -50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+              />
+              <motion.h3
+                className="text-2xl mx-2 font-semibold leading-10 decoration-from-font decoration-skip-ink logo-text-color"
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1, delay: 0.2 }}
+              >
                 ALTUS
-              </h3>
-            </div>
-            <img
+              </motion.h3>
+            </motion.div>
+
+            <motion.img
               onClick={openmenuHandler}
               src={menusymbol}
               alt="menusymbol"
               className="w-8 text-black-800 cursor-pointer"
+              initial={{ opacity: 0, rotate: 45 }}
+              whileInView={{ opacity: 1, rotate: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
             />
           </section>
-          <div className="w-full flex h-full justify-between items-center">
-            <div className="flex flex-col justify-start w-[25%] max-h-max footersection">
-              <img
+          <div className="footer_maindiv">
+            <motion.div
+              className="flex flex-col justify-start max-h-max footersection"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 1 }}
+            >
+              <motion.img
                 src={logoimage}
                 alt="logo_image"
-                className="footer_logo_image "
+                className="footer_logo_image"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
               />
-              <p className="my-16">
+              <motion.p
+                className="my-16 animate-text"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.2 }}
+              >
                 3517 W. Gray St. Utica, Pennsylvania 57867
                 <br />
-              </p>
-              <span className="text-2xl font-poppins font-bold firstfooterspan">
-                <i class="bi bi-c-circle"></i> 2025 Altus
-              </span>
-            </div>
-            <div className="flex flex-col w-[25%] max-h-max footersection">
-              <p>Twitter/X</p>
-              <p>Instagram</p>
-              <p>Linkedin</p>
-              <span className="my-6">Reinvent your business </span>
-              <p>support@example.com</p>
-            </div>
-            <div className="flex flex-col w-[35%] max-h-max  footersection">
-              <h3 className="my-4">Get in Touch with us </h3>
-              <div className="px-3 ml-2 w-full">
+              </motion.p>
+              <motion.span
+                className="text-2xl font-poppins font-bold firstfooterspan"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.4 }}
+              >
+                <i className="bi bi-c-circle"></i> 2025 Altus
+              </motion.span>
+            </motion.div>
+
+            <motion.div
+              className="flex flex-col max-h-max footersection"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 1 }}
+            >
+              <motion.p
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.6 }}
+              >
+                Twitter/X
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.8 }}
+              >
+                Instagram
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 1 }}
+              >
+                Linkedin
+              </motion.p>
+              <motion.span
+                className="my-6 animate-text"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 1.2 }}
+              >
+                Reinvent your business
+              </motion.span>
+              <motion.p
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 1.4 }}
+              >
+                support@example.com
+              </motion.p>
+            </motion.div>
+
+            <motion.div
+              className="flex flex-col max-h-max footersection2"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 1 }}
+            >
+              <motion.h3
+                className="my-4 animate-text"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 1.6 }}
+              >
+                Get in Touch with us
+              </motion.h3>
+              <div className="px-5 w-full">
                 <div className="footer_input_container">
-                  <input
+                  <motion.input
                     className="footer_input font-poppins font-semibold"
                     placeholder="Your Email"
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 1, delay: 1.8 }}
                   />
-                  <span>
-                    <i class="bi bi-arrow-right"></i>
-                  </span>
+                  <motion.span
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 1, delay: 2 }}
+                  >
+                    <i className="bi bi-arrow-right"></i>
+                  </motion.span>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </Section>
         <div className={`menu_overlay ${isShowoverlay ? "open" : ""}`}></div>

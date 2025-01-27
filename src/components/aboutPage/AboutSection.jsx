@@ -3,21 +3,22 @@ import React, { useEffect, useState } from "react";
 import logoimage from "../../assets/Logo_image.png";
 import menusymbol from "../../assets/menusymbol.png";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Section = (props) => {
   return (
-    <section className="w-full h-screen px-16 flex flex-col justify-start items-center">
-      <div className="w-full h-full flex flex-col justify-evenly max-w-[1300px]">
+    <section className="w-full paddinghori16 flex flex-col items-center">
+      <div className="w-full h-full flex flex-col justify-evenly max-w-[1300px] bgdiv ">
         {props.children}
       </div>
     </section>
   );
 };
 
+
 const PartnerSection = ({ heading, content }) => {
   const [isHovered, setIsHovered] = useState(false);
 
-  // Event handlers for hover
   const handleMouseEnter = () => setIsHovered(true);
   const handleMouseLeave = () => setIsHovered(false);
 
@@ -27,18 +28,24 @@ const PartnerSection = ({ heading, content }) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <span className="partner_arrow2">
+      <span className={`partner_arrow2 ${isHovered ? "rotated" : ""}`}>
         <i className={`bi bi-arrow-up ${isHovered ? "rotated" : ""}`}></i>
       </span>
-      <h3>
+
+      <h3 className={isHovered ? "hovered" : ""}>
         {isHovered
           ? "Your success is our priority, now and in the future."
           : "How We Work?"}
       </h3>
-      <p>{isHovered ? content : heading}</p>
+
+      <p className={isHovered ? "hovered" : ""}>
+        {isHovered ? content : heading}
+      </p>
     </div>
   );
 };
+
+
 
 const AboutSection = () => {
   const [IsMenuVisible, setIsMenuVisible] = useState(false);
@@ -98,10 +105,11 @@ const AboutSection = () => {
           <section className="py-16 flex justify-between items-center">
             <div className="flex">
               <img src={logoimage} alt="logoimage" className="w-16" />
-              <h3 className="text-2xl mx-2 font-semibold leading-10 decoration-from-font decoration-skip-ink logo-text-color ">
+              <h3 className="text-2xl mx-2 font-semibold leading-10 decoration-from-font decoration-skip-ink logo-text-color">
                 ALTUS
               </h3>
             </div>
+
             <img
               onClick={openmenuHandler}
               src={menusymbol}
@@ -109,36 +117,42 @@ const AboutSection = () => {
               className="w-8 text-black-800 cursor-pointer"
             />
           </section>
+
           <div className="w-full h-full flex flex-col items-start justify-center">
             <h1 className="About_Section_heading1">
               Transforming Value Chains, Solving Challenges
             </h1>
+
             <h2 className="About_Section_heading2">
               With Bespoke AI Solutions
             </h2>
-            <div className="flex items-center gap-3 ">
+
+            <div className="About_Sectionflex1">
               <p className="About_Section_para">
                 We collaborate with businesses as strategic partners, offering
                 insightful consulting to uncover obstacles, seize opportunities,
                 and craft bespoke AI solutions. Our approach doesn’t just solve
-                challenges or mitigate risks it reinvents your value chain,
+                challenges or mitigate risks—it reinvents your value chain,
                 empowering your team to focus on innovation and high-impact
                 work.
               </p>
+
               <p className="About_Section_para">
                 Specializing in AI consulting, we design tailored solutions to
                 address unique business needs, streamline both front-end and
                 back-end operations, and eliminate inefficiencies. Helping you
-                unlock the potential fo sustainable growth and unparalleled
+                unlock the potential for sustainable growth and unparalleled
                 efficiency.
               </p>
             </div>
           </div>
         </Section>
+
         <Section>
           <div className="w-full h-full flex flex-col items-start justify-center">
             <h2 className="About_Section_heading3">Who are we?</h2>
-            <div className="flex items-center gap-3">
+
+            <div className="About_Sectionflex2">
               <p className="About_Section_para">
                 We are a UK-based GenAI company of passionate professionals
                 dedicated to solving business challenges with AI reinvention.
@@ -146,43 +160,69 @@ const AboutSection = () => {
                 we deliver strategic consulting and custom AI solutions to help
                 businesses achieve operational excellence.
               </p>
+
               <p className="About_Section_para">
                 We believe in AI's transformative power to overcome challenges,
                 drive growth, empower teams, and enhance productivity, enabling
-                businesses to achieve their goals and unlock new possibilities
+                businesses to achieve their goals and unlock new possibilities.
               </p>
             </div>
           </div>
         </Section>
+
         <Section>
-          <div className="w-full h-full flex items-center justify-between gap-3">
-            <div className="w-[35%] h-full flex justify-start flex-col ">
+          <div className="w-full h-full flex flex-col items-start justify-center">
+            <h2 className="About_Section_heading3">Who are we?</h2>
+
+            <div className="About_Sectionflex2">
+              <p className="About_Section_para">
+                We are a UK-based GenAI company of passionate professionals
+                dedicated to solving business challenges with AI reinvention.
+                With a client-first approach and a relentless focus on results,
+                we deliver strategic consulting and custom AI solutions to help
+                businesses achieve operational excellence.
+              </p>
+
+              <p className="About_Section_para">
+                We believe in AI's transformative power to overcome challenges,
+                drive growth, empower teams, and enhance productivity, enabling
+                businesses to achieve their goals and unlock new possibilities.
+              </p>
+            </div>
+          </div>
+
+          <div className="About_Sectionflex3">
+            <div className="About_Sectionflexsub3">
               <h2 className="About_Section_heading4">Vision</h2>
+
               <p className="About_Section_para2">
                 Our vision is to create a future where technology and humanity
                 coexist symbiotically.
               </p>
             </div>
-            <div className="w-[55%] h-full flex justify-start py-4 flex-col ">
+
+            <div className="About_Sectionflexsub3_2">
               <p className="About_Section_para3">
                 We want to create a world where technology and humanity thrive
-                together, unlocking infinit possibilities for innovation,
+                together, unlocking infinite possibilities for innovation,
                 growth, and sustainability. We strive to build work environments
                 that inspire creativity, amplify human potential, and pave the
                 way for a brighter, AI-driven future. We envision a world where
                 businesses thrive by fostering work environments that empower
                 people and enable them to achieve their fullest potential,
-                amplified by the transformative power of artific intelligence.
-                We aspire to bridge the gap between human creativity and AI’s
-                limitless capacity to innovate, ensuring a sustainable and
-                prosperous future for Businesses, Employees, and Customers.
+                amplified by the transformative power of artificial
+                intelligence. We aspire to bridge the gap between human
+                creativity and AI’s limitless capacity to innovate, ensuring a
+                sustainable and prosperous future for Businesses, Employees, and
+                Customers.
               </p>
             </div>
           </div>
         </Section>
+
         <Section>
-          <div className="w-full h-full flex items-center justify-between gap-3">
-            <div className="w-[35%] h-full flex justify-start flex-col ">
+          <div className="About_Sectionflex3">
+            <div className="About_Sectionflexsub3">
               <h2 className="About_Section_heading4">Mission</h2>
               <p className="About_Section_para2">
                 Our mission is to transform businesses through tailored AI
@@ -190,13 +230,13 @@ const AboutSection = () => {
                 opportunities.
               </p>
             </div>
-            <div className="w-[55%] h-full flex justify-start py-4 flex-col ">
+            <div className="About_Sectionflexsub3_2">
               <p className="About_Section_para3">
                 At our core, we empower businesses to embrace the transformative
                 potential of artificial intelligence. Through custom-tailored
                 solutions, we address unique challenges, streamline
                 inefficiencies, and elevate workforce capabilities. Guided by a
-                commitment to innovation an sustainability, we aim to reimagine
+                commitment to innovation and sustainability, we aim to reimagine
                 industries, deliver exceptional value, and shape a future where
                 AI works for humanity. We aim to address inefficiencies, elevate
                 productivity, and empower workforces to focus on high-value
@@ -209,6 +249,7 @@ const AboutSection = () => {
             </div>
           </div>
         </Section>
+
         <Section>
           <div className="w-full h-full p-2 flex flex-col justify-evenly">
             <h2 className="About_Section_heading5">HOW WE WORK?</h2>
@@ -216,17 +257,17 @@ const AboutSection = () => {
               We start with an in-depth consultation to understand your business
               objectives, challenges, and current processes.
             </p>
-            <div className="w-full py-6  flex gap-2 justify-between items-stretch">
+            <div className="About_Sectionflex4">
               <PartnerSection
-                heading="ONGOING SUPPORT AND OPTIMISAION"
+                heading="ONGOING SUPPORT AND OPTIMISATION"
                 content="We provide regular updates, ongoing support, and continuous optimisation to ensure your unique challenges are always addressed, and our AI solutions continue delivering value as your business grows."
               />
               <PartnerSection
-                heading="CONSULTAION AND ASSESSMENT"
+                heading="CONSULTATION AND ASSESSMENT"
                 content="We provide regular updates, ongoing support, and continuous optimisation to ensure your unique challenges are always addressed, and our AI solutions continue delivering value as your business grows."
               />
               <PartnerSection
-                heading="IMPLEMENTA-TION AND TRAINING"
+                heading="IMPLEMENTATION AND TRAINING"
                 content="We provide regular updates, ongoing support, and continuous optimisation to ensure your unique challenges are always addressed, and our AI solutions continue delivering value as your business grows."
               />
               <PartnerSection
@@ -236,6 +277,7 @@ const AboutSection = () => {
             </div>
           </div>
         </Section>
+
         <div className={`menu_overlay ${isShowoverlay ? "open" : ""}`}></div>
         <div className={`menu_container ${IsMenuVisible ? "open" : ""}`}>
           <div className="w-full px-10 py-8 flex justify-between items-center">
@@ -271,3 +313,8 @@ const AboutSection = () => {
 };
 
 export default AboutSection;
+
+
+
+
+

@@ -68,7 +68,6 @@
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
   color: rgba(148, 148, 148, 1);
-  /* margin: 30px 0px; */
 }
 
 .About_Section_para3 {
@@ -105,14 +104,13 @@
   color: rgba(137, 137, 137, 1);
 }
 
-
 .partner_section2 {
   width: 25%;
   padding: 20px 15px;
   border-radius: 10px;
   background: rgba(235, 235, 235, 1);
-  position: relative; /* Needed for positioning the arrow */
-  transition: background 0.3s ease, border 0.3s ease; /* Smooth transition */
+  position: relative;
+  transition: background 0.3s ease, border 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -133,7 +131,7 @@
   text-align: left;
   width: 60%;
   color: rgba(206, 206, 206, 1);
-  transition: all 0.3s ease; /* Smooth transition for text change */
+  transition: all 0.3s ease;
 }
 
 .partner_section2 > span {
@@ -144,7 +142,7 @@
   text-align: left;
   color: rgba(206, 206, 206, 1);
   margin-top: 30px;
-  transition: opacity 0.3s ease; /* Smooth transition for hiding */
+  transition: opacity 0.3s ease;
 }
 
 .partner_section2 > p {
@@ -161,16 +159,16 @@
 
 .partner_arrow2 {
   position: absolute;
-  top: 0%;
-  right: -5%;
+  top: -10%;
+  right: 5%;
   transform: translate(-50%, -50%) rotate(45deg);
   color: rgba(219, 139, 54, 1) !important;
   font-size: 50px !important;
-  transition: transform 0.3s ease; /* Smooth transition for the arrow */
+  transition: transform 0.3s ease;
 }
 
 .partner_section2:hover span {
-  opacity: 0; /* Hide the span on hover */
+  opacity: 0;
   display: none;
 }
 
@@ -180,8 +178,7 @@
   line-height: 25px;
   text-transform: uppercase;
   width: 100%;
-  color:  rgba(219, 139, 54, 1);
-
+  color: rgba(219, 139, 54, 1);
 }
 
 .partner_section2:hover > p {
@@ -194,4 +191,97 @@
   text-transform: lowercase;
   color: rgba(255, 255, 255, 1);
   margin-top: 10px;
+}
+
+.About_Sectionflex1 {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+.About_Sectionflex2 {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+.About_Sectionflex3 {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+}
+.About_Sectionflexsub3 {
+  display: flex;
+  width: 35%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.About_Sectionflexsub3_2 {
+  width: 55%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px 0px;
+  flex-direction: column;
+}
+
+.About_Sectionflex4 {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 30px 0px;
+  gap: 2rem;
+}
+@media (min-width: 0px) and (max-width: 600px) {
+  .About_Section_heading1 {
+    font-size: 42px;
+    line-height: 50px;
+  }
+  .About_Section_heading2 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .About_Sectionflex1 {
+    flex-direction: column;
+  }
+  .About_Section_heading3 {
+    font-size: 42px;
+    line-height: 50px;
+  }
+  .About_Sectionflex2 {
+    flex-direction: column;
+  }
+  .About_Sectionflex3 {
+    flex-direction: column;
+  }
+  .About_Sectionflexsub3 {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .About_Sectionflexsub3_2 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px 0px;
+    flex-direction: column;
+  }
+
+  .About_Sectionflex4 {
+    flex-direction: column;
+    padding: 30px 0px;
+    gap: 2rem;
+  }
+  .partner_section2 {
+    width: 100%;
+  }
 }

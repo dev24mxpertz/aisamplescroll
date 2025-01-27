@@ -14,11 +14,12 @@ import goalicon2 from "../../assets/goalicon2.png";
 import goalicon3 from "../../assets/goalicon3.png";
 import goalicon4 from "../../assets/goalicon4.png";
 import goalicon5 from "../../assets/goalicon5.png";
+import { motion } from "framer-motion";
 
 const Section = (props) => {
   return (
-    <section className="w-full h-screen px-16 flex flex-col justify-start items-center">
-      <div className="w-full h-full flex flex-col justify-evenly max-w-[1300px]">
+    <section className="w-full paddinghori16 flex flex-col items-center">
+      <div className="w-full h-full flex flex-col justify-evenly max-w-[1300px] bgdiv ">
         {props.children}
       </div>
     </section>
@@ -27,8 +28,8 @@ const Section = (props) => {
 
 const BlackSection = (props) => {
   return (
-    <section className="w-full h-screen px-16 flex bg-black flex-col justify-start items-center">
-      <div className="w-full h-full flex justify-end items-center   max-w-[1300px]">
+    <section className="w-full BLACKpaddinghori16 flex bg-black flex-col justify-evenly items-center">
+      <div className="w-full h-full flex justify-end items-center justify-end  max-w-[1300px]">
         {props.children}
       </div>
     </section>
@@ -38,7 +39,6 @@ const BlackSection = (props) => {
 const PartnerSection = ({ number, heading, content }) => {
   const [isHovered, setIsHovered] = useState(false);
 
-  // Event handlers for hover
   const handleMouseEnter = () => setIsHovered(true);
   const handleMouseLeave = () => setIsHovered(false);
 
@@ -49,14 +49,20 @@ const PartnerSection = ({ number, heading, content }) => {
       onMouseLeave={handleMouseLeave}
     >
       <span className="partner_arrow">
-        <i className={`bi bi-arrow-up ${isHovered ? "rotated" : ""}`}></i>
+        <i
+          className={`bi bi-arrow-up ${isHovered ? "rotated" : ""}`}
+          style={{ transition: "transform 0.3s ease" }}
+        ></i>
       </span>
+
       <h3>
         {isHovered
           ? "Your success is our priority, now and in the future."
           : "Why Choose Us"}
       </h3>
+
       <span style={{ opacity: isHovered ? 0 : 1 }}>{number}.</span>
+
       <p>{isHovered ? content : heading}</p>
     </div>
   );
@@ -119,46 +125,133 @@ const IndexSection = () => {
         <Section>
           <>
             <section className="py-8 flex justify-between items-center">
-              <div className="flex">
-                <img src={logoimage} alt="logoimage" className="w-16" />
-                <h3 className="text-2xl mx-2 font-semibold leading-10 decoration-from-font decoration-skip-ink logo-text-color ">
+              <motion.div
+                className="flex"
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.8 }}
+              >
+                <motion.img
+                  src={logoimage}
+                  alt="logoimage"
+                  className="w-16"
+                  initial={{ opacity: 0, y: -50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1 }}
+                />
+                <motion.h3
+                  className="text-2xl mx-2 font-semibold leading-10 decoration-from-font decoration-skip-ink logo-text-color"
+                  initial={{ opacity: 0, x: -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                >
                   ALTUS
-                </h3>
-              </div>
-              <img
+                </motion.h3>
+              </motion.div>
+
+              <motion.img
                 onClick={openmenuHandler}
                 src={menusymbol}
                 alt="menusymbol"
                 className="w-8 text-black-800 cursor-pointer"
+                initial={{ opacity: 0, rotate: 45 }}
+                whileInView={{ opacity: 1, rotate: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
               />
             </section>
-            <h1 className="frontheading">Reinvent</h1>
-            <h2 className="frontsubheading">Value Chain</h2>
-            <div className="w-full mt-10 flex items-end justify-end">
-              <p className="frontsubpara">
+
+            <motion.h1
+              className="frontheading animate-text"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 1 }}
+            >
+              Reinvent
+            </motion.h1>
+
+            <motion.h2
+              className="frontsubheading animate-text"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 1, delay: 0.2 }}
+            >
+              Value Chain
+            </motion.h2>
+
+            <motion.div
+              className="w-full mt-10 flex items-end justify-end"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 1, delay: 0.4 }}
+            >
+              <motion.p
+                className="frontsubpara"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 1, delay: 0.6 }}
+              >
                 Reinvent the value chain, solve unique problems, and boost
                 productivity, efficiency, and profitability with bespoke AI
                 solutions.
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
           </>
         </Section>
         <Section>
           <div className="flex flex-col items-center">
             <div className="w-full secondboxbg rounded-md flex flex-col justify-center items-center p-4">
-              <h3 className="secondsectionheading">REINVENTION</h3>
-              <h4 className="secondsectionsubheading">STRATEGY FOR SUCCESS</h4>
-              <p className="secondsectionsubpara">
+              <motion.h3
+                className="secondsectionheading animate-text"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 1 }}
+              >
+                REINVENTION
+              </motion.h3>
+
+              <motion.h4
+                className="secondsectionsubheading animate-text"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 1.2 }}
+              >
+                STRATEGY FOR SUCCESS
+              </motion.h4>
+              <motion.p
+                className="secondsectionsubpara animate-text"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 1.4 }}
+              >
                 The rate of change affecting businesses has risen over 183% in
                 the last 4 years. To counter this, 83% of organisations have
                 accelerated the execution of reinvention with GenAI.
-              </p>
+              </motion.p>
             </div>
-            <p className="secondsectionpara">
+            <motion.p
+              className="secondsectionpara animate-text"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 1.6 }}
+            >
               in less than half the time against competitors
-            </p>
-            <div className="p-2 w-full flex justify-center items-stretch ">
-              <div className="px-4 py-4 flex flex-col mx-2 items-center justify-evenly subboxshadow rounded-md w-1/4">
+            </motion.p>
+            <div className="  firstflexidv ">
+              <motion.div
+                className="px-4 py-4 flex flex-col mx-2 items-center justify-evenly subboxshadow rounded-md w-1/4"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 1.2 }}
+              >
                 <img
                   src={secondsectionimage1}
                   alt="secondsectionimage1"
@@ -168,8 +261,14 @@ const IndexSection = () => {
                 <p className="secondsectionlastpara">
                   Greater improvements in productivity
                 </p>
-              </div>
-              <div className="px-4 py-4 flex flex-col mx-2 items-center justify-evenly subboxshadow bg-white rounded-md w-1/4">
+              </motion.div>
+              <motion.div
+                className="px-4 py-4 flex flex-col mx-2 items-center justify-evenly subboxshadow bg-white rounded-md w-1/4"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 1.4 }}
+              >
                 <img
                   src={secondsectionimage2}
                   alt="secondsectionimage2"
@@ -179,15 +278,29 @@ const IndexSection = () => {
                 <p className="secondsectionlastpara">
                   Higher average revenue growth.
                 </p>
-              </div>
+              </motion.div>
             </div>
           </div>
         </Section>
         <Section>
           <div className="w-full py-16">
-            <h1 className="thirdSectionheading">GEN AI IN ACTION</h1>
-            <div className="w-full  p-2 flex items-center gap-x-1.5 justify-between">
-              <div className="w-1/3 px-4 py-4 bg-orange-700 fourthbox relative">
+            <motion.h1
+              className="thirdSectionheading animate-text"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 1 }}
+            >
+              GEN AI IN ACTION
+            </motion.h1>
+            <div className="secondflexidv">
+              <motion.div
+                className="w-1/3 px-4 py-4 bg-orange-700 fourthbox relative"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 1.2 }}
+              >
                 <img src={fourthIcon1} alt="fourthIcon1" />
                 <h3 className="fourthboxheading">3M</h3>
                 <p className="fourthboxsubheading">Hours Saved</p>
@@ -195,11 +308,24 @@ const IndexSection = () => {
                   <i className="bi bi-chevron-right"></i>
                 </span>
                 <div className="fourth_subcircle"></div>
-                <p className="new-paragraph">
+                <motion.p
+                  className="new-paragraph"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  transition={{ duration: 1.4 }}
+                >
                   An agency saved 3 million operational hours using GenAI.
-                </p>
-              </div>
-              <div className="w-1/3 px-4 py-4 bg-orange-700 fourthbox">
+                </motion.p>
+              </motion.div>
+
+              <motion.div
+                className="w-1/3 px-4 py-4 bg-orange-700 fourthbox"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 1.3 }}
+              >
                 <img src={fourthIcon2} alt="fourthIcon2" className="w-16" />
                 <h3 className="fourthboxheading">16M</h3>
                 <p className="fourthboxsubheading">CUSTOMER OFFERINGS</p>
@@ -207,12 +333,25 @@ const IndexSection = () => {
                   <i className="bi bi-chevron-right"></i>
                 </span>
                 <div className="fourth_subcircle"></div>
-                <p className="new-paragraph">
+                <motion.p
+                  className="new-paragraph"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  transition={{ duration: 1.5 }}
+                >
                   A company delivered 16 million personalized offerings to their
-                  customers within 3 months. 
-                </p>
-              </div>
-              <div className="w-1/3 px-4 py-4 bg-orange-700 fourthbox">
+                  customers within 3 months.
+                </motion.p>
+              </motion.div>
+
+              <motion.div
+                className="w-1/3 px-4 py-4 bg-orange-700 fourthbox"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 1.6 }}
+              >
                 <img src={fourthIcon3} alt="fourthIcon3" className="w-16" />
                 <h3 className="fourthboxheading">+10%</h3>
                 <p className="fourthboxsubheading">Hours Saved</p>
@@ -220,19 +359,39 @@ const IndexSection = () => {
                   <i className="bi bi-chevron-right"></i>
                 </span>
                 <div className="fourth_subcircle"></div>
-                <p className="new-paragraph">
+                <motion.p
+                  className="new-paragraph"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  transition={{ duration: 1.7 }}
+                >
                   An insurer increased the potential revenue by 10% using AI in
-                  only one single function of the whole process. 
-                </p>
-              </div>
+                  only one single function of the whole process.
+                </motion.p>
+              </motion.div>
             </div>
           </div>
         </Section>
         <Section>
           <div className="w-full py-8 ">
-            <h1 className="fouthSectionheading">Our suite of Solutions</h1>
-            <div className="w-full p-2 flex justify-between gap-3 items-stretch">
-              <div className="w-[48%] oursite_box">
+            <motion.h1
+              className="fouthSectionheading animate-text"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 1 }}
+            >
+              Our suite of Solutions
+            </motion.h1>
+            <div className=" thirdflexidv">
+              <motion.div
+                className="oursite_box"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 1.2 }}
+              >
                 <h3>AI ASSISTANT FOR CUSTOMER SERVICE</h3>
                 <p>
                   Eliminate unique customer frustrations and operational issues
@@ -241,9 +400,23 @@ const IndexSection = () => {
                   productivity with the custom AI assistant for customer
                   service.
                 </p>
-                <button className="oursite_box_link">Learn More</button>
-              </div>
-              <div className="w-[48%] oursite_box">
+                <motion.button
+                  className="oursite_box_link"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  transition={{ duration: 1.3 }}
+                >
+                  Learn More
+                </motion.button>
+              </motion.div>
+              <motion.div
+                className="oursite_box"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 1.4 }}
+              >
                 <h3>AI WORKFORCE FOR BUSINESS OPERATIONS</h3>
                 <p>
                   Imagine a workplace where challenges are met head-on,
@@ -251,116 +424,192 @@ const IndexSection = () => {
                   creativity and innovation—all driven by custom AI solutions
                   applicable throughout the value chain.
                 </p>
-                <button className="oursite_box_link">Learn More</button>
-              </div>
+                <motion.button
+                  className="oursite_box_link"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  transition={{ duration: 1.5 }}
+                >
+                  Learn More
+                </motion.button>
+              </motion.div>
             </div>
           </div>
         </Section>
         <Section>
           <div className="w-full p-2 h-full ">
-            <h3 className="goalachieve_heading">
+            <motion.h3
+              className="goalachieve_heading animate-text"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 1 }}
+            >
               Achieve Your Goals <br /> with Altus Solutions
-            </h3>
-            <div className="w-full flex justify-between gap-3 items-stretch">
-              <div className="w-[85%] flex">
+            </motion.h3>
+            <div className="fourthflexidv">
+              <motion.div
+                className="w_85"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 1.2 }}
+              >
                 <div className="goalwrapper w-full goalwrapper_padding flex flex-col justify-between">
                   <h3>BOOST YOUR SUCCESS</h3>
                   <p>
                     An agency saved 3 million operational hours using GenAI.
                   </p>
                   <div className="goalouter_circle">
-                    <div className="goalinner_circle">
+                    <motion.div
+                      className="goalinner_circle"
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: false, amount: 0.3 }}
+                      transition={{ duration: 1.3 }}
+                    >
                       <img src={goalicon1} alt="goalicon1" />
                       <span>
-                        An agency saved 3 million operational hours using
-                        GenAI. 
+                        An agency saved 3 million operational hours using GenAI.
                       </span>
                       <p>
                         Our intelligent solutions target unique challenges,
                         enhance customer experiences, and fuel innovation,
                         setting you apart in a competitive landscape.
                       </p>
-                    </div>
+                    </motion.div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="flex">
+              <motion.div
+                className="flex"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 1.4 }}
+              >
                 <div className="goalwrapper flex flex-col justify-center">
                   <h3>ADAPTIVE SCALABILITY</h3>
                   <p>AI Tools that grow with you.</p>
                   <div className="goalouter_circle">
-                    <div className="goalinner_circle">
+                    <motion.div
+                      className="goalinner_circle"
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: false, amount: 0.3 }}
+                      transition={{ duration: 1.4 }}
+                    >
                       <img src={goalicon2} alt="goalicon2" />
                       <span>An agency saved 3 million</span>
                       <p>
                         Our intelligent solutions target unique challenges,
-                        enhance customer experiences,
+                        enhance customer experiences.
                       </p>
-                    </div>
+                    </motion.div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
-            <div className="flex gap-3 mt-2">
-              <div className="goalwrapper flex flex-col justify-center">
+            <div className="fouthsubflexdiv">
+              <motion.div
+                className="goalwrapper flex flex-col justify-center"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 1.5 }}
+              >
                 <h3>
-                  EMPOWERED <br />
-                  HUMAN CAPITAL
+                  EMPOWERED <br /> HUMAN CAPITAL
                 </h3>
-                <p>An agency saved 3 million operational hours using GenAI. </p>
+                <p>An agency saved 3 million operational hours using GenAI.</p>
                 <div className="goalouter_circle">
-                  <div className="goalinner_circle">
+                  <motion.div
+                    className="goalinner_circle"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    transition={{ duration: 1.5 }}
+                  >
                     <img src={goalicon3} alt="goalicon3" />
                     <span>An agency saved 3 million</span>
                     <p>
                       Our intelligent solutions target unique challenges,
-                      enhance customer experiences,
+                      enhance customer experiences.
                     </p>
-                  </div>
+                  </motion.div>
                 </div>
-              </div>
-              <div className="goalwrapper flex flex-col justify-center">
+              </motion.div>
+              <motion.div
+                className="goalwrapper flex flex-col justify-center"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 1.6 }}
+              >
                 <h3>
-                  MAX RESULTS,
-                  <br />
-                  LOW OVERHEAD
+                  MAX RESULTS, <br /> LOW OVERHEAD
                 </h3>
                 <p>Achieve more without heavy costs</p>
                 <div className="goalouter_circle">
-                  <div className="goalinner_circle">
+                  <motion.div
+                    className="goalinner_circle"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    transition={{ duration: 1.6 }}
+                  >
                     <img src={goalicon4} alt="goalicon4" />
                     <span>An agency saved 3 million</span>
                     <p>
                       Our intelligent solutions target unique challenges,
-                      enhance customer experiences,
+                      enhance customer experiences.
                     </p>
-                  </div>
+                  </motion.div>
                 </div>
-              </div>
-              <div className="goalwrapper flex flex-col justify-center">
+              </motion.div>
+              <motion.div
+                className="goalwrapper flex flex-col justify-center"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 1.7 }}
+              >
                 <h3>BE A DIFFERENTITOR</h3>
                 <p>Stand out from the crowd.</p>
                 <div className="goalouter_circle">
-                  <div className="goalinner_circle">
+                  <motion.div
+                    className="goalinner_circle"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    transition={{ duration: 1.7 }}
+                  >
                     <img src={goalicon5} alt="goalicon5" />
                     <span>An agency saved 3 million</span>
                     <p>
                       Our intelligent solutions target unique challenges,
-                      enhance customer experiences,
+                      enhance customer experiences.
                     </p>
-                  </div>
+                  </motion.div>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </Section>
         <Section>
           <div className="w-full h-full p-2 flex flex-col items-start">
-            <h3 className="partner_heading">
+            <motion.h3
+              className="partner_heading animate-text"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 1 }}
+            >
               Partner with Us to <br /> Realize Your Vision
-            </h3>
-            <div className="w-full p-2 flex gap-2 justify-between items-stretch">
+            </motion.h3>
+            <div className="fifthflexidv">
               <PartnerSection
                 number={1}
                 heading="Expertise"
@@ -385,51 +634,153 @@ const IndexSection = () => {
           </div>
         </Section>
         <BlackSection>
-          <div className="w-[65%] h-full flex flex-col items-start justify-evenly  ">
-            <h3 className="logo_subheading">
+          <div className="w-full h-full p-2  flex flex-col items-end justify-evenly">
+            <motion.h3
+              className="logo_subheading animate-text"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 1 }}
+            >
               Your bold idea, our smart solutions
-            </h3>
-            <h1 className="logo_heading">Reinvent Your business</h1>
-            <button className="logo_button">continue TO scroll</button>
+            </motion.h3>
+
+            <motion.h1
+              className="logo_heading animate-text"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 1, delay: 0.2 }}
+            >
+              Reinvent Your business
+            </motion.h1>
+
+            <motion.button
+              className="logo_button animate-text"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 1, delay: 0.4 }}
+            >
+              Continue TO scroll
+            </motion.button>
           </div>
         </BlackSection>
         <Section>
-          <div className="w-full flex px-2 h-full justify-between items-center">
-            <div className="flex flex-col justify-start w-[25%] max-h-max footersection">
-              <img
+          <div className="footer_maindiv">
+            <motion.div
+              className="flex flex-col justify-start max-h-max footersection"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 1 }}
+            >
+              <motion.img
                 src={logoimage}
                 alt="logo_image"
-                className="footer_logo_image "
+                className="footer_logo_image"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
               />
-              <p className="my-16">
+              <motion.p
+                className="my-16 animate-text"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.2 }}
+              >
                 3517 W. Gray St. Utica, Pennsylvania 57867
                 <br />
-              </p>
-              <span className="text-2xl font-poppins font-bold firstfooterspan">
-                <i class="bi bi-c-circle"></i> 2025 Altus
-              </span>
-            </div>
-            <div className="flex flex-col w-[25%] max-h-max footersection">
-              <p>Twitter/X</p>
-              <p>Instagram</p>
-              <p>Linkedin</p>
-              <span className="my-6">Reinvent your business </span>
-              <p>support@example.com</p>
-            </div>
-            <div className="flex flex-col w-[35%] max-h-max  footersection">
-              <h3 className="my-4">Get in Touch with us </h3>
+              </motion.p>
+              <motion.span
+                className="text-2xl font-poppins font-bold firstfooterspan"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.4 }}
+              >
+                <i className="bi bi-c-circle"></i> 2025 Altus
+              </motion.span>
+            </motion.div>
+
+            <motion.div
+              className="flex flex-col max-h-max footersection"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 1 }}
+            >
+              <motion.p
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.6 }}
+              >
+                Twitter/X
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.8 }}
+              >
+                Instagram
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 1 }}
+              >
+                Linkedin
+              </motion.p>
+              <motion.span
+                className="my-6 animate-text"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 1.2 }}
+              >
+                Reinvent your business
+              </motion.span>
+              <motion.p
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 1.4 }}
+              >
+                support@example.com
+              </motion.p>
+            </motion.div>
+
+            <motion.div
+              className="flex flex-col max-h-max footersection2"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 1 }}
+            >
+              <motion.h3
+                className="my-4 animate-text"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 1.6 }}
+              >
+                Get in Touch with us
+              </motion.h3>
               <div className="px-5 w-full">
                 <div className="footer_input_container">
-                  <input
+                  <motion.input
                     className="footer_input font-poppins font-semibold"
                     placeholder="Your Email"
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 1, delay: 1.8 }}
                   />
-                  <span>
-                    <i class="bi bi-arrow-right"></i>
-                  </span>
+                  <motion.span
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 1, delay: 2 }}
+                  >
+                    <i className="bi bi-arrow-right"></i>
+                  </motion.span>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </Section>
         <div className={`menu_overlay ${isShowoverlay ? "open" : ""}`}></div>
