@@ -15,7 +15,6 @@ const Section = (props) => {
   );
 };
 
-
 const PartnerSection = ({ heading, content }) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -45,11 +44,10 @@ const PartnerSection = ({ heading, content }) => {
   );
 };
 
-
-
 const AboutSection = () => {
   const [IsMenuVisible, setIsMenuVisible] = useState(false);
   const [isShowoverlay, setisShowoverlay] = useState(false);
+  const [windowidth, setwindowwidth] = useState("");
   const navigate = useNavigate();
   const closemenuHandler = () => {
     setisShowoverlay(true);
@@ -71,6 +69,7 @@ const AboutSection = () => {
         setisShowoverlay(false);
       }, 1000);
     }
+    setwindowwidth(window.innerWidth);
   }, [isShowoverlay]);
 
   const Navigate_Home = () => {
@@ -102,6 +101,7 @@ const AboutSection = () => {
     <Scroll html className="w-full">
       <div className="Main_Layout_Container relative">
         <Section>
+          {windowidth}
           <section className="py-16 flex justify-between items-center">
             <div className="flex">
               <img src={logoimage} alt="logoimage" className="w-16" />
@@ -313,8 +313,3 @@ const AboutSection = () => {
 };
 
 export default AboutSection;
-
-
-
-
-
