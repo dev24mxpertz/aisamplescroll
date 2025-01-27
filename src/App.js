@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import IndexPage from "./components/indexPage/IndexPage";
 import AboutPage from "./components/aboutPage/AboutPage";
@@ -7,6 +7,9 @@ import BackendPage from "./components/backendPage/BackendPage";
 import FrontendPage from "./components/frontendPage/FrontendPage";
 
 const App = () => {
+
+
+
   return (
     <>
       <Routes>
