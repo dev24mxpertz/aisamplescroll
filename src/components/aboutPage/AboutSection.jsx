@@ -457,6 +457,8 @@ const AboutSection = () => {
             />
           </section>
           <section className="w-full paddinghori16 flex flex-col items-center">
+            {windowidth}
+
             <div className="w-full h-full flex flex-col justify-center max-w-[1300px]">
               <AnimatedText
                 start={0.1}
