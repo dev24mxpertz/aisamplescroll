@@ -1,0 +1,197 @@
+.About_Section_heading1 {
+  font-family: Lexend Deca;
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 80px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(219, 139, 54, 1);
+  text-transform: uppercase;
+}
+
+.About_Section_heading2 {
+  font-family: Open Sans;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 65.37px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(148, 148, 148, 1);
+  text-transform: uppercase;
+  margin: 10px 0px;
+}
+
+.About_Section_para {
+  font-family: Open Sans;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32.68px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(137, 137, 137, 1);
+}
+
+.About_Section_heading3 {
+  font-family: Lexend Deca;
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 80px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(219, 139, 54, 1);
+  margin: 10px 0px;
+  text-transform: uppercase;
+}
+
+.About_Section_heading4 {
+  font-family: Lexend Deca;
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 80px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(219, 139, 54, 1);
+  text-transform: uppercase;
+}
+
+.About_Section_para2 {
+  font-family: Open Sans;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 54.47px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(148, 148, 148, 1);
+  /* margin: 30px 0px; */
+}
+
+.About_Section_para3 {
+  font-family: Open Sans;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32.68px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(137, 137, 137, 1);
+}
+
+.About_Section_heading5 {
+  font-family: Lexend Deca;
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 80px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(219, 139, 54, 1);
+  text-transform: uppercase;
+}
+
+.About_Section_para4 {
+  font-family: Open Sans;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32.68px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(137, 137, 137, 1);
+}
+
+
+.partner_section2 {
+  width: 25%;
+  padding: 20px 15px;
+  border-radius: 10px;
+  background: rgba(235, 235, 235, 1);
+  position: relative; /* Needed for positioning the arrow */
+  transition: background 0.3s ease, border 0.3s ease; /* Smooth transition */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+}
+
+.partner_section2:hover {
+  border: 1px solid rgba(219, 139, 54, 1);
+  background: rgba(44, 44, 44, 1);
+}
+
+.partner_section2 > h3 {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  text-align: left;
+  width: 60%;
+  color: rgba(206, 206, 206, 1);
+  transition: all 0.3s ease; /* Smooth transition for text change */
+}
+
+.partner_section2 > span {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 96px;
+  font-weight: 700;
+  line-height: 120px;
+  text-align: left;
+  color: rgba(206, 206, 206, 1);
+  margin-top: 30px;
+  transition: opacity 0.3s ease; /* Smooth transition for hiding */
+}
+
+.partner_section2 > p {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  text-align: left;
+  text-transform: uppercase;
+  color: rgba(219, 139, 54, 1);
+  transition: color 0.3s ease, font-size 0.3s ease, line-height 0.3s ease;
+  margin-top: 100px;
+}
+
+.partner_arrow2 {
+  position: absolute;
+  top: 0%;
+  right: -5%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  color: rgba(219, 139, 54, 1) !important;
+  font-size: 50px !important;
+  transition: transform 0.3s ease; /* Smooth transition for the arrow */
+}
+
+.partner_section2:hover span {
+  opacity: 0; /* Hide the span on hover */
+  display: none;
+}
+
+.partner_section2:hover > h3 {
+  content: "Your success is our priority, now and in the future.";
+  font-size: 20px;
+  line-height: 25px;
+  text-transform: uppercase;
+  width: 100%;
+  color:  rgba(219, 139, 54, 1);
+
+}
+
+.partner_section2:hover > p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27.24px;
+  text-align: left;
+  text-decoration: none;
+  text-transform: lowercase;
+  color: rgba(255, 255, 255, 1);
+  margin-top: 10px;
+}

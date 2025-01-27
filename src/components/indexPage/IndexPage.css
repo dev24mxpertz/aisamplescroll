@@ -1,0 +1,883 @@
+.logo-text-color {
+  color: rgba(137, 137, 137, 1);
+  font-family: Lexend Deca;
+}
+
+.frontheading {
+  font-family: Lexend Deca;
+  font-size: 150px;
+  font-weight: 700;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(219, 139, 54, 1);
+  text-transform: uppercase;
+  line-height: 150px;
+}
+
+.frontsubheading {
+  font-family: Lexend Deca;
+  font-size: 100px;
+  font-weight: 700;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(148, 148, 148, 1);
+  text-transform: uppercase;
+  line-height: 100px;
+}
+
+.frontsubpara {
+  font-family: Open Sans;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32.68px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  width: 40%;
+  color: rgba(84, 84, 84, 1);
+}
+
+.secondsectionheading {
+  font-family: Lexend Deca;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 40px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(219, 139, 54, 1);
+}
+
+.secondsectionsubheading {
+  font-family: Open Sans;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 60.37px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(148, 148, 148, 1);
+}
+
+.secondsectionsubpara {
+  font-family: Open Sans;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 32.68px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(137, 137, 137, 1);
+  width: 80%;
+}
+
+.secondboxbg {
+  background: rgba(235, 235, 235, 1);
+}
+
+.subboxshadow {
+  box-shadow: 5px 4px 22.3px 6px rgba(0, 0, 0, 0.09);
+  background: rgba(241, 241, 241, 1);
+  transition: all 0.3s ease;
+}
+
+.subboxshadow:hover {
+  border: 2px solid rgba(219, 139, 54, 1);
+  background: rgba(33, 33, 33, 1);
+  transition: all 0.3s ease;
+}
+
+.secondsectionpara {
+  font-family: Lexend Deca;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 50px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(172, 172, 172, 1);
+  text-transform: uppercase;
+  /* background-color: red; */
+  width: 70%;
+  margin: 20px auto;
+}
+
+.secondsectionspannumber {
+  font-family: Lexend Deca;
+  font-size: 76px;
+  font-weight: 600;
+  line-height: 100px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(219, 139, 54, 1);
+  margin: 10px 0px;
+}
+
+.secondsectionlastpara {
+  font-family: Open Sans;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 32.68px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(101, 101, 101, 1);
+  transition: all 0.3s ease;
+}
+
+.subboxshadow:hover .secondsectionlastpara {
+  font-size: 24px;
+  color: rgba(247, 247, 247, 1);
+  transition: all 0.3s ease;
+}
+
+.thirdSectionheading {
+  font-family: Lexend Deca;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 80px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(172, 172, 172, 1);
+}
+
+.fourthbox {
+  border: 1px solid transparent;
+  border-image-source: linear-gradient(
+    135.43deg,
+    rgba(247, 247, 247, 0) 4.37%,
+    #db8b36 121.93%
+  );
+  border-image-slice: 1;
+  box-shadow: 0px 9px 19.7px 1px rgba(0, 0, 0, 0.1);
+  background: rgba(235, 235, 235, 1);
+  /* border-radius: 12px; */
+  position: relative;
+  overflow: hidden; /* Ensures content, including the border image, stays inside the rounded box */
+  transition: background-color 0.6s ease, box-shadow 0.6s ease,
+    padding 0.6s ease;
+}
+
+.fourthbox:hover {
+  background: rgba(33, 33, 33, 1);
+  box-shadow: 0px 12px 25px 2px rgba(0, 0, 0, 0.2);
+  border: 2px solid transparent; /* Avoids overlap issues */
+  border-image-source: linear-gradient(
+    180deg,
+    #db8b36 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  padding: 20px 30px;
+}
+
+.fourthbox::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px; /* Matches parent box's border radius */
+  border-width: 1px;
+  border-image-source: linear-gradient(
+    135.43deg,
+    rgba(247, 247, 247, 0) 4.37%,
+    #db8b36 121.93%
+  );
+  border-image-slice: 1;
+  pointer-events: none; /* Prevents ::after from interfering with interactions */
+  z-index: 1;
+  transition: border-image-source 0.6s ease, border-width 0.6s ease;
+}
+
+.fourthbox:hover::after {
+  border-width: 1px;
+  border-image-source: linear-gradient(
+    135.43deg,
+    rgba(247, 247, 247, 0) 4.37%,
+    #db8b36 121.93%
+  );
+}
+
+.fourth_subcircle {
+  position: absolute;
+  top: -45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(219, 139, 54, 1);
+  transition: top 0.6s ease, transform 0.6s ease;
+}
+
+.fourthbox:hover .fourth_subcircle {
+  top: 145%;
+  transform: translate(-50%, -50%);
+}
+
+.fourthbox img {
+  width: 64px;
+  transition: width 0.6s ease;
+}
+
+.fourthbox:hover img {
+  width: 48px;
+  margin: 0px;
+}
+
+.fourthboxheading {
+  font-family: Lexend Deca;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 80px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(219, 139, 54, 1);
+}
+.fourthbox:hover .fourthboxheading {
+  font-family: Lexend Deca;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(219, 139, 54, 1);
+  margin: 10px 6px;
+}
+
+.fourthboxsubheading {
+  font-family: Lexend Deca;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 45px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  text-transform: uppercase;
+  color: rgba(152, 152, 152, 1);
+  margin-bottom: 60px;
+}
+.fourthbox:hover .fourthboxsubheading {
+  font-family: Lexend Deca;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(152, 152, 152, 1);
+  margin: 10px 6px;
+}
+
+.new-paragraph {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  font-family: Open Sans;
+  font-size: 16px;
+  font-weight: 600;
+  /* line-height: 22.68px; */
+  text-align: left;
+  display: none;
+  color: rgba(255, 255, 255, 1);
+}
+
+.fourthbox:hover .new-paragraph {
+  opacity: 1;
+  display: block;
+  visibility: visible;
+  padding: 5px 10px;
+  /* margin-left: 10px; */
+  text-align: left;
+}
+
+.fourthbox_arrow {
+  position: absolute;
+  bottom: 4%;
+  right: 6%;
+  font-size: 30px;
+  font-weight: 900;
+  color: rgba(152, 152, 152, 1);
+  /* background-color: red; */
+  animation: moveLeftRight 2s infinite ease-in-out;
+  padding: 0px 10px;
+}
+
+.fourthbox:hover .fourthbox_arrow {
+  display: none;
+}
+
+@keyframes moveLeftRight {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(8px);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(-8px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* --------fouthSectionheading */
+
+.fouthSectionheading {
+  font-family: Lexend Deca;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 80px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(219, 139, 54, 1);
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 15px 0px;
+}
+
+.oursite_box {
+  background: rgba(235, 235, 235, 1);
+  border-radius: 10px;
+  padding: 20px 40px;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.oursite_box:hover {
+  transform: scale(1.02);
+  background: rgba(33, 33, 33, 1);
+}
+
+.oursite_box > h3 {
+  font-family: Open Sans;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 65.37px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(219, 139, 54, 1);
+  width: 80%;
+  margin-bottom: 40px;
+}
+
+.oursite_box:hover h3 {
+  font-family: Open Sans;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32.68px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(219, 139, 54, 1);
+  margin-bottom: 0px;
+}
+
+.oursite_box > p {
+  font-family: Open Sans;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32.68px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(137, 137, 137, 1);
+  margin: 10px 0px;
+  display: none;
+}
+
+.oursite_box:hover p {
+  font-family: Open Sans;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32.68px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(255, 255, 255, 1);
+  display: flex;
+}
+
+.oursite_box_link {
+  font-family: "Open Sans", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32.68px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(219, 139, 54, 1);
+  outline: none;
+  border: none;
+  margin: 10px 0px;
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+}
+
+.oursite_box_link::after {
+  content: "";
+  position: absolute;
+  bottom: -7px;
+  left: 0;
+  width: 25%;
+  height: 5px;
+  background-color: rgba(219, 139, 54, 1);
+  transition: width 0.3s ease;
+}
+
+.oursite_box_link:hover::after {
+  width: 100%;
+}
+
+.oursite_box:hover button {
+  display: none;
+}
+
+.goalachieve_heading {
+  font-family: Lexend Deca;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 80px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-transform: uppercase;
+  text-decoration-skip-ink: none;
+  color: rgba(219, 139, 54, 1);
+}
+.goalwrapper {
+  background: rgba(235, 235, 235, 1);
+  border-radius: 10px;
+  position: relative;
+  border-top-right-radius: 40px;
+  padding: 40px 20px;
+  transition: all 0.4s ease; /* Smooth transition for all properties */
+}
+
+.goalwrapper_padding {
+  padding: 70px 40px;
+}
+
+.goalwrapper > h3 {
+  font-family: Lexend Deca;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 30.5px;
+  text-align: left;
+  text-decoration-skip-ink: none;
+  color: rgba(219, 139, 54, 1);
+  transition: opacity 0.4s ease; /* Smooth opacity transition */
+}
+
+.goalwrapper > p {
+  font-family: Open Sans;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 22.68px;
+  text-align: left;
+  text-decoration-skip-ink: none;
+  color: rgba(44, 44, 44, 1);
+  width: 70%;
+  transition: opacity 0.4s ease; /* Smooth transition for opacity */
+  opacity: 1;
+}
+
+.goalouter_circle {
+  position: absolute;
+  right: 0%;
+  top: 0%;
+  padding: 10px;
+  border-radius: 50%;
+  background: rgba(247, 247, 247, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.4s ease, width 0.4s ease, height 0.4s ease,
+    border-radius 0.4s ease; /* Smooth transitions */
+  z-index: 1;
+}
+
+.goalinner_circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(219, 139, 54, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s ease; /* Smooth transition for size and borders */
+  z-index: 2;
+}
+
+.goalinner_circle > img {
+  width: 60%;
+  height: auto;
+  object-fit: contain;
+  transition: width 0.4s ease; /* Smooth transition for image width */
+}
+
+.goalinner_circle > span {
+  display: none;
+  font-family: Open Sans;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22.68px;
+  text-align: left;
+  text-decoration-skip-ink: none;
+  color: rgba(219, 139, 54, 1);
+}
+
+.goalinner_circle > p {
+  display: none;
+  font-family: Open Sans;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20.68px;
+  text-align: left;
+  text-decoration-skip-ink: none;
+  color: rgba(152, 152, 152, 1);
+}
+
+/* Hover Effects */
+.goalwrapper:hover h3,
+.goalwrapper:hover p {
+  opacity: 0; /* Hide the text elements smoothly */
+}
+
+.goalwrapper:hover .goalouter_circle {
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  border-radius: 0%; /* Make outer circle take full width/height and square */
+}
+
+.goalwrapper:hover .goalinner_circle {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  border-radius: 0%;
+  background: rgba(44, 44, 44, 1);
+  padding: 10px;
+  border: 3px solid rgba(219, 139, 54, 1);
+}
+
+.goalwrapper:hover .goalinner_circle > span {
+  display: initial;
+  opacity: 1; /* Make span visible */
+  z-index: 3;
+}
+
+.goalwrapper:hover .goalinner_circle > p {
+  display: initial;
+  opacity: 1;
+  z-index: 3;
+}
+
+.goalwrapper:hover .goalinner_circle > img {
+  width: 40px; /* Image expands on hover */
+}
+
+.partner_heading {
+  font-family: Lexend Deca;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 80px;
+  text-align: left;
+  text-transform: uppercase;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(219, 139, 54, 1);
+}
+
+.partner_section {
+  width: 25%;
+  padding: 20px 15px;
+  border-radius: 10px;
+  background: rgba(235, 235, 235, 1);
+  position: relative; /* Needed for positioning the arrow */
+  transition: background 0.3s ease, border 0.3s ease; /* Smooth transition */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+}
+
+.partner_section:hover {
+  border: 1px solid rgba(219, 139, 54, 1);
+  background: rgba(44, 44, 44, 1);
+}
+
+.partner_section > h3 {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  text-align: left;
+  width: 60%;
+  color: rgba(206, 206, 206, 1);
+  transition: all 0.3s ease; /* Smooth transition for text change */
+}
+
+.partner_section > span {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 96px;
+  font-weight: 700;
+  line-height: 120px;
+  text-align: left;
+  color: rgba(206, 206, 206, 1);
+  margin-top: 30px;
+  transition: opacity 0.3s ease; /* Smooth transition for hiding */
+}
+
+.partner_section > p {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  text-align: left;
+  text-transform: uppercase;
+  color: rgba(219, 139, 54, 1);
+  transition: color 0.3s ease, font-size 0.3s ease, line-height 0.3s ease;
+}
+
+.partner_arrow {
+  position: absolute;
+  top: 0%;
+  right: -5%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  color: rgba(219, 139, 54, 1) !important;
+  font-size: 50px !important;
+  transition: transform 0.3s ease; /* Smooth transition for the arrow */
+}
+
+.partner_section:hover span {
+  opacity: 0; /* Hide the span on hover */
+  display: none;
+}
+
+.partner_section:hover > h3 {
+  content: "Your success is our priority, now and in the future.";
+  color: rgba(255, 255, 255, 1);
+  font-size: 20px;
+  line-height: 25px;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.partner_section:hover > p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27.24px;
+  text-align: left;
+  text-decoration: none;
+  text-transform: lowercase;
+  color: rgba(255, 255, 255, 1);
+  margin-top: 10px;
+}
+
+.logo_subheading {
+  font-family: Open Sans;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 43.58px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 1);
+}
+
+.logo_heading {
+  font-family: Lexend Deca;
+  font-size: 120px;
+  font-weight: 700;
+  line-height: 120px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  text-transform: uppercase;
+  color: rgba(172, 172, 172, 1);
+}
+.logo_button {
+  background: rgba(235, 235, 235, 1);
+  padding: 20px 40px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Lexend Deca;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(90, 90, 90, 1);
+  outline: none;
+  border: none;
+  border-radius: 10px;
+}
+
+/* ----------------------------------------footersection */
+
+.footer_logo_image {
+  width: 100px;
+}
+.footersection {
+  /* background-color: orange; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+.firstfooterspan {
+  color: rgba(83, 83, 83, 1) !important;
+  font-weight: 400 !important;
+}
+
+.footersection > p {
+  font-family: Open Sans;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32.68px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(83, 83, 83, 1);
+  padding: 5px 10px;
+}
+
+.footersection > span {
+  font-family: Lexend Deca;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(219, 139, 54, 1);
+  padding: 5px 10px;
+}
+
+.footersection > h3 {
+  font-family: Lexend Deca;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 60px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(219, 139, 54, 1);
+  padding: 0px 10px;
+}
+
+.footer_input_container {
+  background: rgba(244, 244, 244, 1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px;
+  border-radius: 10px;
+}
+
+.footer_input {
+  background: rgba(244, 244, 244, 1);
+
+  border: none;
+  outline: none;
+  padding: 10px 10px;
+}
+
+.footer_input_container > span {
+  color: rgba(153, 153, 153, 1);
+  font-size: 20px;
+}
+
+.menu_container {
+  width: 100%;
+  background-color: white;
+  padding: 20px;
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  height: 100%;
+  left: 0%;
+  /* transform: translate(-50%, -50%); */
+  transform: translate(-100%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  transition: left 0.5s ease-in-out; /* smooth sliding transition */
+}
+
+.menu_container.open {
+  left: 50%; /* slide to the center of the screen */
+  transform: translate(-50%, -50%);
+}
+
+.menu_link {
+  text-decoration: none;
+  font-family: Open Sans;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 49.03px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(219, 139, 54, 1);
+  text-transform: uppercase;
+  margin: 15px 0px;
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+}
+
+.menu_link::after {
+  content: "";
+  position: absolute;
+  bottom: -7px;
+  left: 0;
+  width: 0;
+  height: 5px;
+  background-color: rgba(219, 139, 54, 1);
+  transition: width 0.3s ease;
+}
+
+.menu_link:hover::after {
+  width: 100%;
+}
+
+.menu_overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: -100%;  /* Start completely off-screen */
+  background-color: black;
+  z-index: 999;
+  transform: translateY(-50%);  /* Keep vertical centering */
+  transition: left 0.7s ease-in-out; /* Transition on 'left' for smooth sliding */
+}
+
+.menu_overlay.open {
+  left: 0;  /* Slide in to full view */
+  transform: translateY(-50%); /* Keep vertical centering */
+}
